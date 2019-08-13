@@ -21,7 +21,12 @@ Vue.component('card',{
 					{{content}}
 					</div>
 					<button @click="deleteArticle" class="btn btn-danger mt-3">Delete Me</button>
-					<div class="text-center text-muted display-4">{{ claps }}</div>
+
+					<div class="text-center">
+					<div class=" text-muted display-4">{{ claps }}</div>
+					<button @click="clapForArticle" class="btn btn-info btn-sm">Clap for me</button>
+					</div>
+
 				</div>
 			</div>
 	`,
@@ -30,6 +35,11 @@ Vue.component('card',{
 
 	deleteArticle() {
 		this.$emit('delete-articleeee', this.title);
+	},
+
+	clapForArticle() {
+		this.claps = this.claps + 1;
+		//this.claps++
 	}
 	}
 
